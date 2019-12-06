@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from '../logo.svg';
+//import logo from '../logo.svg';
+import ZipForm from './ZipForm';
+import WeatherList from './WeatherList';
+import CurrentDay from './CurrentDay';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timezoneOffset: -7, 
+      zipcode: "",
+      city: {},
+      forecast: [],
+      simpleForecast: [], 
+      selectedDate: null
+    }
+    this.url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
+    this.apikey = "&units=imperial&appid=c59493e7a8643f49446baf0d5ed9d646";
+
+    this.googleApiKey = "AIzaSyC1HTCZ6mUEKFuuLHPLdE1zM2_Q7j0vxhk";
+    this.googleMapsUrl = "https://maps.googleapis.com/maps/api/timezone/json?location=";
+
+  }
+
+  render() {
+    return (
+
+        <div>
+          <ZipForm />
+          <WeatherList />
+          <CurrentDay />
+        </div>
+
+    );
+  }
+
+
 }
 
 export default App;

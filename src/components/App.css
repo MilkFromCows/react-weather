@@ -1,28 +1,100 @@
-body {
-  padding-top: 65px;
-}
-.form-area {
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.flex-parent {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
-.title {
-  margin: 20px;
+
+body {
+  background: #1db3f9;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
 }
-.form-group {
-  min-width: 500px;
+
+.zip-form {
+  padding: 15px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
 }
-@media only screen and (max-width: 736px) {
-  .form-group {
-    min-width: 90vw;
+
+.zip-form label {
+    margin-top: 7px;
+    vertical-align: middle;
+}
+
+.zip-form input {
+    width: 20%;
+    margin: 0 10px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.zip-form button {
+    padding: 7px 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.weather-list {
+  margin: 20px 0;
+}
+
+.weather-list-item {
+  min-width: 100px;
+  margin: 0 10px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+  .weather-list-item :first-child {
+    margin-left: 0;
   }
+
+  .weather-list-item :last-child {
+    margin-right: 0;
+  }
+
+  .weather-list-item > h3 {
+    font-weight: normal;
+  }
+
+.current-day {
+  box-sizing: border-box;
+  padding: 20px;
+  padding-top: 0;
+  border: 2px solid #000;
+  border-radius: 20px;
+  background-color: #fff;
 }
-.loading-indicator {
-  max-height: 50px;
-  max-width: 50px;
+
+.details {
+  justify-content: flex-start;
 }
-.chart-area {
-  margin: 25px;
-  max-width: 600px;
+  .details > div {
+    padding-left: 20px;
+  }
+
+  .details > div :first-child {
+    padding-left: 0;
+  }
+
+.weather {
+  font-size: 30px;
+  line-height: 1.4;
 }
+    
+  .weather p {
+      margin: 0;
+  }
+
+  .weather img {
+      vertical-align: middle;
+  }
