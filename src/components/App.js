@@ -21,14 +21,19 @@ class App extends React.Component {
 
     this.googleApiKey = "AIzaSyC1HTCZ6mUEKFuuLHPLdE1zM2_Q7j0vxhk";
     this.googleMapsUrl = "https://maps.googleapis.com/maps/api/timezone/json?location=";
+    
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
 
+  onFormSubmit(zipcode) {
+    this.setState( {zipcode} ); //or {zipcode: zipcode}
   }
 
   render() {
     return (
 
         <div>
-          <ZipForm />
+          <ZipForm onSubmit={this.onFormSubmit} />
           <WeatherList />
           <CurrentDay />
         </div>
