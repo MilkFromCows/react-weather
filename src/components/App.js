@@ -30,6 +30,7 @@ class App extends React.Component {
     this.setState( {zipcode} ); //or {zipcode: zipcode}
 
     // AJAX call
+    /*
     fetch(`${this.url}${zipcode}${this.apikey}`)
 	    .then(response => response.json())
         .then(data => { 
@@ -73,7 +74,7 @@ class App extends React.Component {
         .catch(error => {
             alert('There was a problem getting info!'); 
         });
-    
+    */
   }
 
   render() {

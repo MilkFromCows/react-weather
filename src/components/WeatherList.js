@@ -9,7 +9,6 @@ class WeatherList extends React.Component {
         }
     }
 
-    // Cannot read property 'map' of undefined. Hmm.
     render () {
         const { forecastDays } = this.props;
         return (
