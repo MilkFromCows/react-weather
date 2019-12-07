@@ -1,4 +1,5 @@
 import React from 'react';
+import WeatherListItem from './WeatherListItem';
 
 class WeatherList extends React.Component {
     constructor(props) {
@@ -8,11 +9,22 @@ class WeatherList extends React.Component {
         }
     }
 
-    render() {
+    // Cannot read property 'map' of undefined. Hmm.
+    render () {
+        const { forecastDays } = this.props;
         return (
-            <div>This is the WeatherList component</div>
+            <div className="weather-list flex-parent">
+                { forecastDays.map((forecastDay, index) =>
+                    <WeatherListItem
+                        key={forecastDay.dt}
+                        forecastDay={forecastDay}
+                        index={index}
+                    />
+                ) }
+            </div>
         );
     }
+
 }
 
 export default WeatherList;
