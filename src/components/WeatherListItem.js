@@ -8,6 +8,13 @@ class WeatherListItem extends React.Component {
         }
     }
 
+    // Ah, this must be where getWeekday belongs. 
+    getWeekday(date) {
+        const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const weekDay = date.getDay();
+        return dayNames[weekDay];
+      }
+
     render() {
         const { forecastDay } = this.props;
         const date = new Date(forecastDay.dt * 1000);
